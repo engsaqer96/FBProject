@@ -2,14 +2,14 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 
 class FBProvider extends ChangeNotifier{
-
+  String? myToken;
   FBProvider() {
-    print('test');
+  }
+  setToken(String? token){
+    myToken=token;
+    notifyListeners();
   }
 
-  printToken() async{
-     String? token=await FirebaseMessaging.instance.getToken();
-     print(token);
-  }
+
 
 }
